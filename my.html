@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎</title>
+    <link rel="stylesheet" href="jquery.fullPage.css">
+    <script src="jquery-1.11.1.js"></script>
+    <!-- jquery.easings.min.js 是必须的，用于 easing 参数，也可以使用完整的 jQuery UI 代替 -->
+    <!-- // <script src="js/jquery.easings.min.js"></script> -->
+    <!-- 如果 scrollOverflow 设置为 true，则需要引入 jquery.slimscroll.min.js，一般情况下不需要 -->
+    <!-- // <script src="js/jquery.slimscroll.min.js"></script> -->
+    <script src="jquery.fullpage.js"></script>
+    <style type="text/css">
+    body,
+    html,
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+    }
+
+    body,
+    html {
+        color: #fff;
+        height: 100%;
+        overflow: hidden;
+        font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    #container,
+    .section {
+        height: 100%;
+        position: relative;
+    }
+
+    .section {
+        text-align: center;
+    }
+
+    .head-icon {
+        margin: 10px auto;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        position: relative;
+    }
+
+    .head-icon img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+    }
+
+    .ele {
+        animation: move 3s ease-out 1;
+    }
+
+    @keyframes move {
+        0% {
+            opacity: 0;
+            transform:scale(0.1,0.1);
+        }
+        50% {
+            opacity: 0.5;
+            transform:scale(0.5,0.5);
+        }
+        100% {
+            opacity: 1.0;
+            transform:scale(1,1);
+        }
+    }
+
+    .next-arr {
+        width: 50px;
+        height: 50px;
+        margin: 150px auto 0 auto;
+        animation: mymove 3s ease-in infinite;
+        -webkit-animation: mymove 3s ease-in-out infinite;
+    }
+
+    @keyframes mymove {
+        0% {
+            transform: scale(0.4, 0.4);
+        }
+        50% {
+            transform: scale(0.8,0.8);
+        }
+        100% {
+            transform: scale(0.4, 0.4);
+        }
+    }
+
+    @-webkit-keyframes mymove {
+        0% {
+            -webkit-transform: scale(0.4, 0.4);
+        }
+        50% {
+            -webkit-transform: scale(0.8, 0.8);
+        }
+        100% {
+            -webkit-transform: scale(0.4, 0.4);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div id="dowebok">
+        <!-- 第一部分的内容 开始 -->
+        <div class="section" id="section0">
+            <section class="content">
+                <div class="head-icon" id="head-icon">
+                    <img src="img/icon_1.png"  >
+                </div>
+                <h1 class="ele name">邢运</h1>
+                <p class="ele ele0">梦想成为一个前端程序媛的女生</p>
+                <p class="ele ele1">生日：1994-04</p>
+                <p class="ele ele2">学校：南华大学</p>
+                <p class="ele ele3">喜欢：跑步，打羽毛球，一切和运动相关的东西</p>
+                <p class="ele ele4">博客：<a href="http://blog.csdn.net/sunhengzhe">[猛戳这里]</a></p>
+            </section>
+            <div class="next-arr">
+                <img src="img/down.png"  >
+            </div>
+        </div>
+        <!-- 第一部分的内容 结束-->
+        <div class="section" id="section1">
+            <section class="content">
+                <h1 class="ele ele10">CSS招式</h1>
+                <p class="ele ele11">css3动画</p>
+                <p class="ele ele12">瀑布流布局</p>
+                <p class="ele ele13"> JS招式</p>
+                <h1 class="ele ele14">jquery插件fullpage </h1>
+                <p class="ele ele15">jquery插件myfocus </p>
+                <p class="ele ele16">jquery插件alidation </p>
+                <h1 class="ele ele17">HTML招式</h1>
+                <p class="ele ele18">语义语法，HTML5 API</p>
+            </section>
+            <div class="next-arr">
+             <img src="img/down.png"  >
+            </div>
+        </div>
+        <div class="section" id="section2">
+            <section class="content">
+                <h1 class="ele ele20">主要作品</h1>
+                <h3 class="ele ele21">个人博客</h3>
+                <p class="ele ele22">用途：记录自己的学习笔记，分享</p>
+                <p class="ele ele24">负责：全部前端开发</p>
+                <p class="ele ele25">作品地址：<a href="http://52.24.192.29:8081/Map/index.html">[猛戳这里]</a></p>
+            </section>
+            <p class="ele ele26">
+                <a class="ele27 sea-icon"></a>
+            </p>
+            <div class="next-arr">
+               <img src="img/down.png"  >
+            </div>
+        </div>
+        <div class="section" id="section3">
+            <section class="content">
+                <h1 class="ele ele40">欢迎联系我</h1>
+                <p class="ele ele41">手机：15201370207</p>
+                <p class="ele ele42">邮箱：1284791210@qq.com</p>
+                <p class="ele ele43">微博：@我的四片叶</p>
+                <p class="ele ele44">
+                    <wb:follow-button uid="3025220401" type="red_3" style="display:inline-block;height:21px;overflow:hidden;">关注按钮</wb:follow-button>
+                </p>
+                <div id="back" class="ele ele45">
+                    <a href="../index.html">返回</a>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script>
+    $(function() {
+        $('#dowebok').fullpage({
+            sectionsColor: ['#290018', '#99FF00', '#E673C9', '#CCFF80'],
+            continuousVertical: true
+        });
+
+        setInterval(function() {
+            $.fn.fullpage.moveSectionDown();
+        }, 10000);
+    });
+    </script>
+</body>
+
+</html>
