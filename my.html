@@ -2,191 +2,262 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>欢迎</title>
-    <link rel="stylesheet" href="jquery.fullPage.css">
-    <script src="jquery-1.11.1.js"></script>
-    <!-- jquery.easings.min.js 是必须的，用于 easing 参数，也可以使用完整的 jQuery UI 代替 -->
-    <!-- // <script src="js/jquery.easings.min.js"></script> -->
-    <!-- 如果 scrollOverflow 设置为 true，则需要引入 jquery.slimscroll.min.js，一般情况下不需要 -->
-    <!-- // <script src="js/jquery.slimscroll.min.js"></script> -->
-    <script src="jquery.fullpage.js"></script>
-    <style type="text/css">
-    body,
-    html,
-    ul,
-    li {
-        margin: 0;
-        padding: 0;
+  <meta charset="UTF-8">
+  <title>欢迎</title>
+  <link rel="stylesheet" href="css/jquery.fullPage.css">
+  <script src="js/jquery-1.11.1.js"></script>
+  <!-- jquery.easings.min.js 是必须的，用于 easing 参数，也可以使用完整的 jQuery UI 代替 -->
+  <!-- // <script src="js/jquery.easings.min.js"></script> -->
+  <!-- 如果 scrollOverflow 设置为 true，则需要引入 jquery.slimscroll.min.js，一般情况下不需要 -->
+  <!-- // <script src="js/jquery.slimscroll.min.js"></script> -->
+  <script src="js/jquery.fullpage.js"></script>
+  <style type="text/css">
+  body,
+  html,
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  body,
+  html {
+    color: #fff;
+    height: 100%;
+    overflow: hidden;
+    font-family: 微软雅黑;
+    font-size:18px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  @font-face {
+    font-family: "可爱体";
+    src: url(font/cute.ttf);
+  }
+
+  #container,
+  .section {
+    height: 100%;
+    position: relative;
+  }
+
+  .section {
+    text-align: center;
+  }
+
+  .head-icon {
+    margin: 5px auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    position: relative;
+  }
+
+  .head-icon img {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    opacity: 0.75;
+  }
+
+  .head-icon img:link {
+    opacity: 1.0;
+  }
+
+  .head-icon img:visited {
+    opacity: 1.0;
+  }
+
+  .head-icon img:hover {
+    opacity: 1.0;
+  }
+
+  .head-icon img:active {
+    opacity: 1.0;
+  }
+
+  .ele {
+    animation: move 2s ease-out 1;
+  }
+
+  @keyframes move {
+    0% {
+      opacity: 0;
+      transform: scale(0.1, 0.1);
     }
 
-    body,
-    html {
-        color: #fff;
-        height: 100%;
-        overflow: hidden;
-        font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+    100% {
+      opacity: 1.0;
+      transform: scale(1, 1);
     }
+  }
 
-    a {
-        text-decoration: none;
-    }
+  a.btnclick {
+    color: #fff;
+    font-family: "可爱体";
+    font-size: 18px;
+  }
+  a.btnclick:hover{
+    color: #000;
+  }
 
-    #container,
-    .section {
-        height: 100%;
-        position: relative;
-    }
+  img#plane {
+    display: none;
+    width: 80px;
+    height: 50px;
+  }
 
-    .section {
-        text-align: center;
+  @keyframes planemove {
+    0% {
+      transform: translate(0px, -20px);
     }
+    100% {
+      transform: translate(1010px, -130px);
+    }
+  }
 
-    .head-icon {
-        margin: 10px auto;
-        width: 100px;
-        height: 100px;
-        border-radius: 50px;
-        position: relative;
-    }
+  img#plane_t {
+    display: none;
+    width: 80px;
+    height: 50px;
+  }
 
-    .head-icon img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50px;
+  @keyframes plane_tmove {
+    0% {
+      transform: translate(0px, 80px);
     }
-
-    .ele {
-        animation: move 3s ease-out 1;
+    100% {
+      transform: translate(600px, 130px);
+      opacity: 0;
     }
-
-    @keyframes move {
-        0% {
-            opacity: 0;
-            transform:scale(0.1,0.1);
-        }
-        50% {
-            opacity: 0.5;
-            transform:scale(0.5,0.5);
-        }
-        100% {
-            opacity: 1.0;
-            transform:scale(1,1);
-        }
-    }
-
-    .next-arr {
-        width: 50px;
-        height: 50px;
-        margin: 150px auto 0 auto;
-        animation: mymove 3s ease-in infinite;
-        -webkit-animation: mymove 3s ease-in-out infinite;
-    }
-
-    @keyframes mymove {
-        0% {
-            transform: scale(0.4, 0.4);
-        }
-        50% {
-            transform: scale(0.8,0.8);
-        }
-        100% {
-            transform: scale(0.4, 0.4);
-        }
-    }
-
-    @-webkit-keyframes mymove {
-        0% {
-            -webkit-transform: scale(0.4, 0.4);
-        }
-        50% {
-            -webkit-transform: scale(0.8, 0.8);
-        }
-        100% {
-            -webkit-transform: scale(0.4, 0.4);
-        }
-    }
-    </style>
+  }
+  </style>
 </head>
 
 <body>
-    <div id="dowebok">
-        <!-- 第一部分的内容 开始 -->
-        <div class="section" id="section0">
-            <section class="content">
-                <div class="head-icon" id="head-icon">
-                    <img src="img/icon_1.png"  >
-                </div>
-                <h1 class="ele name">邢运</h1>
-                <p class="ele ele0">梦想成为一个前端程序媛的女生</p>
-                <p class="ele ele1">生日：1994-04</p>
-                <p class="ele ele2">学校：南华大学</p>
-                <p class="ele ele3">喜欢：跑步，打羽毛球，一切和运动相关的东西</p>
-                <p class="ele ele4">博客：<a href="http://blog.csdn.net/sunhengzhe">[猛戳这里]</a></p>
-            </section>
-            <div class="next-arr">
-                <img src="img/down.png"  >
-            </div>
+  <div id="downbok">
+    <!-- 第一部分的内容 开始 -->
+    <div class="section" id="section0">
+      <section class="content">
+        <img src="image/plane.png" id="plane">
+        <img src="image/plane_s.png" id="plane_s">
+        <div class="head-icon" id="head-icon">
+          <img src="image/my.jpg">
         </div>
-        <!-- 第一部分的内容 结束-->
-        <div class="section" id="section1">
-            <section class="content">
-                <h1 class="ele ele10">CSS招式</h1>
-                <p class="ele ele11">css3动画</p>
-                <p class="ele ele12">瀑布流布局</p>
-                <p class="ele ele13"> JS招式</p>
-                <h1 class="ele ele14">jquery插件fullpage </h1>
-                <p class="ele ele15">jquery插件myfocus </p>
-                <p class="ele ele16">jquery插件alidation </p>
-                <h1 class="ele ele17">HTML招式</h1>
-                <p class="ele ele18">语义语法，HTML5 API</p>
-            </section>
-            <div class="next-arr">
-             <img src="img/down.png"  >
-            </div>
-        </div>
-        <div class="section" id="section2">
-            <section class="content">
-                <h1 class="ele ele20">主要作品</h1>
-                <h3 class="ele ele21">个人博客</h3>
-                <p class="ele ele22">用途：记录自己的学习笔记，分享</p>
-                <p class="ele ele24">负责：全部前端开发</p>
-                <p class="ele ele25">作品地址：<a href="http://52.24.192.29:8081/Map/index.html">[猛戳这里]</a></p>
-            </section>
-            <p class="ele ele26">
-                <a class="ele27 sea-icon"></a>
-            </p>
-            <div class="next-arr">
-               <img src="img/down.png"  >
-            </div>
-        </div>
-        <div class="section" id="section3">
-            <section class="content">
-                <h1 class="ele ele40">欢迎联系我</h1>
-                <p class="ele ele41">手机：15201370207</p>
-                <p class="ele ele42">邮箱：1284791210@qq.com</p>
-                <p class="ele ele43">微博：@我的四片叶</p>
-                <p class="ele ele44">
-                    <wb:follow-button uid="3025220401" type="red_3" style="display:inline-block;height:21px;overflow:hidden;">关注按钮</wb:follow-button>
-                </p>
-                <div id="back" class="ele ele45">
-                    <a href="../index.html">返回</a>
-                </div>
-            </section>
-        </div>
+        <h1 class="ele name">邢运</h1>
+        <p class="ele ele0">梦想成为一个前端程序媛的女生</p>
+        <p class="ele ele1">生日：1994-04</p>
+        <p class="ele ele2">学校：南华大学</p>
+        <p class="ele ele3">喜欢：跑步，打羽毛球，一切和运动相关的东西</p>
+        <p class="ele ele4">博客：<a href="http://www.cnblogs.com/myFourLeaf/" class="btnclick">[猛戳这里]</a></p>
+      </section>
     </div>
-    <script>
-    $(function() {
-        $('#dowebok').fullpage({
-            sectionsColor: ['#290018', '#99FF00', '#E673C9', '#CCFF80'],
-            continuousVertical: true
-        });
+    <!-- 第一部分的内容 结束-->
+    <div class="section" id="section1">
+      <section class="content">
+      <img src="image/plane.png" id="plane">
+        <img src="image/plane_s.png" id="plane_s">
+        <h1 class="ele ele10">CSS招式</h1>
+        <p class="ele ele11">双飞翼布局</p>
+        <p class="ele ele12">瀑布流布局</p>
+        <h1 class="ele ele13"> JS招式</h1>
+        <p class="ele ele14">jquery插件fullpage </p>
+        <p class="ele ele15">jquery插件myfocus </p>
+        <p class="ele ele16">jquery插件alidation </p>
+        <h1 class="ele ele17">HTML招式</h1>
+        <p class="ele ele18">语义语法，HTML5 API</p>
+      </section>
+    </div>
+    <div class="section" id="section2">
+      <section class="content">
 
-        setInterval(function() {
-            $.fn.fullpage.moveSectionDown();
-        }, 10000);
+        <section class="slide">
+          <h1 class="ele ele20">主要作品1</h1>
+          <h3 class="ele ele21">个人简历</h3>
+          <p class="ele ele22">用途：方便找工作咯</p>
+          <p class="ele ele24">负责：全部软件开发</p>
+          <p class="ele ele25">作品地址：<a href="https://github.com/XYCTS/myresume" class="btnclick">[猛戳这里]</a></p>
+        </section>
+        <section class="slide">
+          <h1 class="ele ele20">主要作品2</h1>
+          <h3 class="ele ele21">瀑布流布局</h3>
+          <p class="ele ele22">用途：网页页面布局方案</p>
+          <p class="ele ele24">负责：全部软件开发</p>
+          <p class="ele ele25">作品地址：<a href="https://github.com/XYCTS/myresume" class="btnclick">[猛戳这里]</a></p>
+        </section>
+        <section class="slide">
+          <h1 class="ele ele20">主要作品3</h1>
+          <h3 class="ele ele21">双飞翼布局</h3>
+          <p class="ele ele22">用途：网页页面布局方案</p>
+          <p class="ele ele24">负责：全部软件开发</p>
+          <p class="ele ele25">作品地址：<a href="https://github.com/XYCTS/myresume" class="btnclick">[猛戳这里]</a></p>
+        </section>
+      </section>
+      <p class="ele ele26">
+        <a class="ele27 sea-icon"></a>
+      </p>
+    </div>
+    <div class="section" id="section3">
+      <section class="content">
+        <h1 class="ele ele40">欢迎联系我</h1>
+        <p class="ele ele41">手机：15201370207</p>
+        <p class="ele ele42">邮箱：1284791210@qq.com</p>
+        <p class="ele ele43">微博：@我的四片叶</p>
+
+        <div id="back" class="ele ele45">
+          <a href="my.html" class="btnclick">返回</a>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script>
+  // continuousVertical: false规定是否循环演示
+  $(function() {
+    $('#downbok').fullpage({
+      sectionsColor: ['#FF6666', '#CCFF00', '#99CC66', '#66CCCC'],
+
+      resize: true,
+      'verticalCentered': true
     });
-    </script>
+
+    setInterval(function() {
+      $.fn.fullpage.moveSectionDown();
+    }, 6000);
+
+    $(window).resize(function() {
+      autoScrolling();
+    });
+
+    function autoScrolling() {
+      var $ww = $(window).width();
+      if ($ww < 1024) {
+        $.fn.fullpage.setAutoScrolling(false);
+      } else {
+        $.fn.fullpage.setAutoScrolling(true);
+      }
+    }
+
+    autoScrolling();
+    $("img#plane").css({
+      "display": "block",
+      "animation": "planemove 6s ease-in infinite",
+      "z-index": "10",
+      "width": "80px",
+      "height": "50px"
+    });
+    $("img#plane_s").css({
+      "display": "block",
+      "animation": "plane_tmove 6s ease-in infinite",
+      "z-index": "10",
+      "width": "80px",
+      "height": "50px"
+    });
+
+  });
+  </script>
 </body>
 
 </html>
