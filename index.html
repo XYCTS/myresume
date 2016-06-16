@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>my</title>
+  <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/jquery.fullpage.js"></script>
+  <script type="text/javascript">
+  $(function() {
+
+    $('#fullpage').fullpage({
+      verticalCentered: false,
+
+      afterLoad: function(anchorLink, index) {
+        if (index == 1) {
+          $('.ele11').addClass('active1');
+          $('.ele12').addClass('active2');
+          $('.font1').css('opacity', '1');
+        } else
+        if (index == 2) {
+          $('.css3').css('opacity', '1');
+          $('.js').css('opacity', '1');
+          $('.css3').addClass('css3_animation');
+          $('.js').addClass('css3_animation');
+        }
+        if (index == 3) {
+        	 $('.slide_content').css('opacity', '1');
+          $('.slide_content').addClass('slide_animation');
+        }
+      },
+      onLeave: function(index, nextIndex, direction) {
+        if (index == 1) {
+          $('.font1').css('opacity', '0');
+          $('.ele11').removeClass('active1');
+          $('.ele12').removeClass('active2');
+
+        }
+        if (index == 2) {
+        	$('.css3').css('opacity', '0');
+          $('.js').css('opacity', '0');
+          $('.css3').removeClass('css3_animation');
+          $('.js').removeClass('css3_animation');
+        }
+        if (index == 3) {
+        	 $('.slide_content').css('opacity', '0');
+          $('.slide_content').removeClass('slide_animation');
+        }
+      }
+    });
+  });
+  </script>
+</head>
+
+<body>
+  <div id="fullpage">
+    <div class="section section1">
+      <div class="bg1">
+        <div class="icon"><img src="image/my.jpg" alt=""></div>
+        <div class="font font1">
+          <p class="ele11">邢运</p>
+          <p class="ele12">梦想成为一个前端程序媛的女生</p>
+          <p class="ele11">生日：1994-04</p>
+          <p class="ele12">学校：南华大学</p>
+          <p class="ele11">喜欢：跑步，打羽毛球，一切和运动相关的东西</p>
+          <p class="ele12">博客：<a href="http://xycts.github.io/" class="blog">[猛戳这里]</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="section section2">
+      <div class="bg2">
+        <div class="font font2">
+          <p class="ele ele21">[ HTML招式 ]</p>
+          <p class="ele ">语义语法，HTML5 API</p>
+          <div class="css3">
+            <p class="ele ele21">[ CSS招式 ]</p>
+            <p class="ele ele22">双飞翼布局</p>
+            <p class="ele ele22">瀑布流布局</p>
+            <p class="ele ele22">css3动画</p>
+          </div>
+          <div class="js">
+            <p class="ele ele21"> [ JS招式 ]</p>
+            <p class="ele ele22">焦点图</p>
+            <p class="ele ele22">表单验证</p>
+            <p class="ele ele22">jquery</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section3">
+      <div class="bg3">
+        <section class="slide">
+          <div class="slide_content">
+            <p class="ele31">主要作品1</p>
+            <p class="ele31">聚美优品首页制作</p>
+            <p class="ele31">项目描述及体会:聚美优品是综合性的电商网站；通过模仿编写，来进一步巩固自己学的理论知识，在开发过程中会发现自己的学习漏洞，但是借助google，百度最终都可以解决所有问题。</p>
+            <p class="ele31">负责：全部软件开发</p>
+            <p class="ele31">作品地址：<a href="https://github.com/XYCTS/jumeiDemo" class="btnclick">[猛戳这里]</a></p>
+          </div>
+        </section>
+        <section class="slide ">
+          <div class="slide_content">
+            <p class="ele31">主要作品2</p>
+            <p class="ele31">个人简历</p>
+            <p class="ele31">项目描述及体会:个人简介是运用jQuery全屏滚动插件fullPage.js来编写的，分为四个section,分别是自我介绍，专业技能，项目经验，联系方式；插件的使用简化了很多代码的编写；实现的效果非常好；</p>
+            <p class="ele31">负责：全部软件开发</p>
+            <p class="ele31">作品地址：<a href="https://github.com/XYCTS/myresume" class="btnclick">[猛戳这里]</a></p>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="section section4">
+      <div class="bg4">
+        <div class="font4">
+          <p class="ele ele41">手机：15201370207</p>
+          <p class="ele ele42">邮箱：1284791210@qq.com</p>
+          <p class="ele ele43">微博：@我的四片叶</p>
+          <p class="ele ele40">欢迎联系我</p>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
